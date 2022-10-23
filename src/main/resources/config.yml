@@ -33,3 +33,6 @@ suspicious-domains:
   enable-webhook: false
   # Provide your Discord webhook URL here.
   webhook-url: ''
+
+# Should we override the regular /banip, /ipban & /ban-ip commands with Uranium's version?
+override-ipban: true

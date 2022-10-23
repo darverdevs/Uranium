@@ -1,0 +1,6 @@
+name: Uranium
+version: 1.0.0-LITE
+main: darverdevs.Main
+description: A moderation utility for Eaglercraft 1.8 servers.
+author: Cold
+softdepend: [PlaceholderAPI]

@@ -49,7 +49,7 @@ public class CommandListener implements Listener {
         User user = UserManager.getUser(event.getPlayer());
         String message = event.getMessage();
 
-        if (user.hasPermission("uranium.commandspy")) return;
+        if (user.hasPermission("uranium.commandspy.exempt")) return;
         UserManager.getUsers().forEach((u) -> {
             if (u.isCommandSpy())
                 u.sendMessage(plugin.getConfig().getString("prefix") + "&e" + user.getName() + ": " + message);

@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
+import uranium.commands.*;
 import uranium.listeners.*;
 import uranium.tasks.IPCheck;
 import uranium.user.*;
@@ -35,7 +36,12 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     }
 
     private void setupCommands() {
-        
+        getCommand("ubanip").setExecutor(new BanIP(this));
+        getCommand("ip").setExecutor(new IP(this));
+        getCommand("domain").setExecutor(new Domain(this));
+        getCommand("vanish").setExecutor(new Vanish(this));
+        getCommand("uranium").setExecutor(new Uranium(this));
+        getCommand("commandspy").setExecutor(new CommandSpy(this));
     }
 
     private void setupTasks() {

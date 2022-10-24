@@ -19,6 +19,7 @@ public class ChatListener implements Listener {
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) {
+        if (!plugin.getConfig().getBoolean("chat-filter.enabled")) return;
         User user = UserManager.getUser(event.getPlayer());
         String message = event.getMessage();
         if (user.hasPermission("uranium.bypass")) return;
@@ -45,9 +46,9 @@ public class ChatListener implements Listener {
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGH)
     public void onPlayerChat2(AsyncPlayerChatEvent event) {
+        if (!plugin.getConfig().getBoolean("chat-filter.enabled")) return;
         User user = UserManager.getUser(event.getPlayer());
         String message = event.getMessage();
-        if (!plugin.getConfig().getBoolean("chat-filter.enabled")) return;
 
         if (!StringUtil.validateMessage(message)) {
             event.setCancelled(true);

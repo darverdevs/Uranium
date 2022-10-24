@@ -3,6 +3,8 @@ chat-filter:
   enabled: true
   # Should usernames be checked on join?
   check-usernames: true
+  # Should we also check the contents of commands?
+  check-commands: true
   # Should posting the same message twice in a row be allowed?
   double-posting: false
   # Should there be an enforced delay between messages?

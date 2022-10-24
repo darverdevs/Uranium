@@ -17,6 +17,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
         setupCommands();
         setupTasks();
         setupPluginChannels();
+        getLogger().info("Initialization is complete.");
     }
 
     public void onDisable() {
@@ -25,6 +26,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     }
 
     private void setupListeners() {
+        getLogger().info("Initializing events...");
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandListener(this), this);
@@ -40,6 +42,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     }
 
     private void setupPluginChannels() {
+        getLogger().info("Initializing plugin channels...");
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", this);
     }
@@ -48,7 +51,6 @@ public class Main extends JavaPlugin implements PluginMessageListener {
         getLogger().info("Initializing config...");
         getConfig().options().copyDefaults(true);
         saveConfig();
-        getLogger().info("Done!");
     }
 
     @SuppressWarnings("UnstableApiUsage")

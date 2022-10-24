@@ -33,6 +33,8 @@ public class CommandListener implements Listener {
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGH)
     public void onPlayerPreprocessCommand2(PlayerCommandPreprocessEvent event) {
+        if (!plugin.getConfig().getBoolean("chat-filter.enabled")) return;
+        if (!plugin.getConfig().getBoolean("chat-filter.check-commands")) return;
         User user = UserManager.getUser(event.getPlayer());
         String message = event.getMessage();
 

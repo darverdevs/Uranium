@@ -23,12 +23,7 @@ public class StringUtil {
     }
 
     private static String removeCrap(String s) {
-        return s
-            .replace(" ", "")
-            .replace("_", "")
-            .replace("*", "")
-            .replace(".", "")
-            .replace("/", ""); // TODO: Replace with regex
+        return s.replaceAll("[^a-zA-Z0-9]", "");
     }
 
     public static boolean validateUsername(String username) {

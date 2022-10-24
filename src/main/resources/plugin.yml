@@ -4,3 +4,24 @@ main: uranium.Main
 description: A moderation utility for Eaglercraft 1.8 servers.
 author: Cold
 softdepend: [PlaceholderAPI]
+commands:
+  uranium:
+    description: Reload the plugin config file.
+    permission: uranium.reload
+  domain:
+    description: View the domain that a user is using.
+    permission: uranium.domain
+  ip:
+    description: View the IP address that a user is using to connect.
+    permission: uranium.ip
+  vanish:
+    aliases: [v]
+    description: Disappear into thin air. Poof!
+    permission: uranium.vanish
+  commandspy:
+    aliases: [cspy, cs]
+    description: Spy on player commands.
+    permission: uranium.commandspy
+  ubanip:
+    description: Ban users by IP.
+    permission: uranium.banip

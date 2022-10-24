@@ -36,6 +36,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     }
 
     private void setupCommands() {
+        getLogger().info("Initializing commands...");
         getCommand("ubanip").setExecutor(new BanIP(this));
         getCommand("ip").setExecutor(new IP(this));
         getCommand("domain").setExecutor(new Domain(this));

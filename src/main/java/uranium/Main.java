@@ -6,9 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
-import uranium.listeners.ChatListener;
-import uranium.listeners.CommandListener;
-import uranium.listeners.PlayerListener;
+import uranium.listeners.*;
 import uranium.user.*;
 
 public class Main extends JavaPlugin implements PluginMessageListener {
@@ -30,6 +28,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
         getServer().getPluginManager().registerEvents(new ChatListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandListener(this), this);
+        getServer().getPluginManager().registerEvents(new BlockListener(), this);
     }
 
     private void setupCommands() {

@@ -92,7 +92,7 @@ public class User {
         this.commandSpy = commandSpy;
     }
 
-    public void sendBungeeMessage(Player player, String channel, String message) {
+    public void sendBungeeMessage(String channel, String message) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF(channel);
         out.writeUTF(message);
@@ -100,7 +100,7 @@ public class User {
         player.sendPluginMessage(JavaPlugin.getPlugin(Main.class), "BungeeCord", out.toByteArray());
     }
 
-    public void sendBungeeMessage(Player player, String channel) {
+    public void sendBungeeMessage(String channel) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF(channel);
 
@@ -108,8 +108,8 @@ public class User {
     }
 
     public void onJoin() {
-        sendBungeeMessage(player, "IP");
-        sendBungeeMessage(player, "EAG|GetDomain");
+        sendBungeeMessage("IP");
+        sendBungeeMessage("EAG|GetDomain");
     }
 
     public void sendMessage(String message) {

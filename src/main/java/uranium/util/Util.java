@@ -20,4 +20,18 @@ public class Util {
         Bukkit.getConsoleSender().sendMessage(StringUtil.cc(message));
     }
 
+    public static void sendStaff(String message) {
+        UserManager.getUsers().forEach((user) -> {
+            if (user.hasPermission("uranium.notify")) user.sendMessage(message);
+        });
+        Bukkit.getConsoleSender().sendMessage(StringUtil.cc(message));
+    }
+
+    public static void sendStaff(String message, String permission) {
+        UserManager.getUsers().forEach((user) -> {
+            if (user.hasPermission(permission)) user.sendMessage(message);
+        });
+        Bukkit.getConsoleSender().sendMessage(StringUtil.cc(message));
+    }
+
 }

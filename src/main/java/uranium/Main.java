@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
 import uranium.listeners.*;
+import uranium.tasks.IPCheck;
 import uranium.user.*;
 
 public class Main extends JavaPlugin implements PluginMessageListener {
@@ -34,11 +35,12 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     }
 
     private void setupCommands() {
-
+        
     }
 
     private void setupTasks() {
-
+        getLogger().info("Initializing tasks...");
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, new IPCheck(this), 30, 30); // 1.5 seconds
     }
 
     private void setupPluginChannels() {

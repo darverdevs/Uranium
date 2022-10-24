@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import uranium.Main;
 import uranium.user.UserManager;
 import uranium.util.Util;
+import uranium.util.WebhookUtil;
 
 import java.util.List;
 
@@ -37,6 +38,14 @@ public class IPCheck implements Runnable {
                         Util.sendStaff(prefix + "&c" + user.getName() + "&7 joined using the debug runtime.");
                     else
                         Util.sendStaff(prefix + "&c" + user.getName() + "&7 joined using a strange domain: &c" + user.getDomain());
+
+                    if (plugin.getConfig().getBoolean("suspicious-domains.enable-webhook"))
+                        WebhookUtil.sendSusDomain(user.getName(),
+                                                  user.getDomain().equalsIgnoreCase("null")
+                                                  ? "Offline Download"
+                                                  : user.getDomain().equalsIgnoreCase("")
+                                                  ? "Debug Runtime"
+                                                  : user.getDomain());
                 });
             }
         });

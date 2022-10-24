@@ -6,6 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
+import uranium.listeners.ChatListener;
+import uranium.listeners.CommandListener;
 import uranium.listeners.PlayerListener;
 import uranium.user.*;
 
@@ -13,6 +15,9 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 
     public void onEnable() {
         setupConfig();
+        setupListeners();
+        setupCommands();
+        setupTasks();
         setupPluginChannels();
     }
 
@@ -23,6 +28,8 @@ public class Main extends JavaPlugin implements PluginMessageListener {
 
     private void setupListeners() {
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        getServer().getPluginManager().registerEvents(new ChatListener(this), this);
+        getServer().getPluginManager().registerEvents(new CommandListener(this), this);
     }
 
     private void setupCommands() {
@@ -43,11 +50,6 @@ public class Main extends JavaPlugin implements PluginMessageListener {
         getConfig().options().copyDefaults(true);
         saveConfig();
         getLogger().info("Done!");
-    }
-
-    public void reloadConfig() {
-        super.reloadConfig();
-
     }
 
     @SuppressWarnings("UnstableApiUsage")

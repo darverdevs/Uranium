@@ -36,3 +36,5 @@ suspicious-domains:
 
 # Should we override the regular /banip, /ipban & /ban-ip commands with Uranium's version?
 override-ipban: true
+# Main prefix
+prefix: '&8[&aUranium&8] &7'

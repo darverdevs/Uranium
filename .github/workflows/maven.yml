@@ -22,8 +22,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Copy JAR
+      run: mkdir prod && cp out/*.jar prod
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: Package
-        path: staging
+        path: prod

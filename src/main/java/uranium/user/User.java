@@ -19,7 +19,6 @@ public class User {
     private String ip;
     private String domain;
     private boolean vanished;
-    private boolean staffChat;
     private boolean commandSpy;
 
     public User(Player player) {
@@ -83,14 +82,6 @@ public class User {
                     user.getPlayer().hidePlayer(player);
             });
         else UserManager.getUsers().forEach((user) -> user.getPlayer().showPlayer(player));
-    }
-
-    public boolean isStaffChat() {
-        return staffChat;
-    }
-
-    public void setStaffChat(boolean staffChat) {
-        this.staffChat = staffChat;
     }
 
     public boolean isCommandSpy() {

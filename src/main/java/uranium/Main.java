@@ -11,6 +11,8 @@ import uranium.listeners.*;
 import uranium.tasks.IPCheck;
 import uranium.user.*;
 
+import java.io.File;
+
 public class Main extends JavaPlugin implements PluginMessageListener {
 
     public void onEnable() {
@@ -59,7 +61,7 @@ public class Main extends JavaPlugin implements PluginMessageListener {
     private void setupConfig() {
         getLogger().info("Initializing config...");
         getConfig().options().copyDefaults(true);
-        saveConfig();
+        saveDefaultConfig();
     }
 
     @SuppressWarnings("UnstableApiUsage")

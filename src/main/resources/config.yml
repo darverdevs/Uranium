@@ -1,27 +1,58 @@
+############ Explanation of Config Options ###############
+# chat-filter:
+#   enabled: true
+#   # Should usernames be checked on join?
+#   check-usernames: true
+#   # Should we also check the contents of commands?
+#   check-commands: true
+#   # Should posting the same message twice in a row be allowed?
+#   double-posting: false
+#   # Should there be an enforced delay between messages?
+#   message-delay: true
+#   # What should the delay be for messages?
+#   message-cooldown: 1000
+#   # The list of words that should be prevented from being used
+#   banned-words:
+#     - poop
+#     suspicious-domains:
+#       # Should we check for suspicious domains?
+#       enabled: true
+#       # Should we notify if the user is using an offline download?
+#       offline-download: true
+#       # Should we notify if the user is using the debug runtime?
+#       debug-runtime: true
+#       # A list of trusted domains. These will not generate an alert
+#       trusted-domains:
+#         - 'precisionclient.vercel.app'
+#         - 'eaglercraft.org'
+#         - 'eaglercraft.us'
+#         - 'eaglercraft.me'
+#         - 'eaglercraft.net'
+#         - 'g.deev.is'
+#         - 'g.lax1dude.net'
+#         # Should we send a notification to a Discord webhook when
+#         # a suspicious domain is detected?
+#         enable-webhook: false
+#         # Provide your Discord webhook URL here.
+#         webhook-url: ''
+#
+# Should we override the regular /banip, /ipban & /ban-ip commands with Uranium's version?
+# override-ipban: true
+# Main prefix
+# prefix: '&8[&aUranium&8] &7'
 chat-filter:
-  # Should we enable the chat filter?
   enabled: true
-  # Should usernames be checked on join?
   check-usernames: true
-  # Should we also check the contents of commands?
   check-commands: true
-  # Should posting the same message twice in a row be allowed?
   double-posting: false
-  # Should there be an enforced delay between messages?
   message-delay: true
-  # What should the delay be for messages?
   message-cooldown: 1000
-  # The list of words that should be prevented from being used
   banned-words:
     - poop
 suspicious-domains:
-  # Should we check for suspicious domains?
   enabled: true
-  # Should we notify if the user is using an offline download?
   offline-download: true
-  # Should we notify if the user is using the debug runtime?
   debug-runtime: true
-  # A list of trusted domains. These will not generate an alert
   trusted-domains:
     - 'precisionclient.vercel.app'
     - 'eaglercraft.org'
@@ -30,13 +61,8 @@ suspicious-domains:
     - 'eaglercraft.net'
     - 'g.deev.is'
     - 'g.lax1dude.net'
-  # Should we send a notification to a Discord webhook when
-  # a suspicious domain is detected?
   enable-webhook: false
-  # Provide your Discord webhook URL here.
   webhook-url: ''
 
-# Should we override the regular /banip, /ipban & /ban-ip commands with Uranium's version?
 override-ipban: true
-# Main prefix
 prefix: '&8[&aUranium&8] &7'

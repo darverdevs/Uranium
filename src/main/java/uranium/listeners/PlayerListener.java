@@ -80,6 +80,7 @@ public class PlayerListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         if (!(event.getAction() == Action.RIGHT_CLICK_BLOCK)) return;
         User user = UserManager.getUser(event.getPlayer());
+        if (user == null) return;
         if (!user.isVanished()) return;
 
         if (event.getClickedBlock().getType() == Material.CHEST
@@ -96,6 +97,7 @@ public class PlayerListener implements Listener {
     @EventHandler(ignoreCancelled = true)
     public void onInventoryClick(InventoryClickEvent event) {
         User user = UserManager.getUser((Player) event.getWhoClicked());
+        if (user == null) return;
         if (!user.isVanished()) return;
 
         if (event.getInventory().getType() == InventoryType.CHEST)
@@ -106,6 +108,7 @@ public class PlayerListener implements Listener {
     public void onPlayerDamageEntity(EntityDamageByEntityEvent event) {
         if (!(event.getEntity() instanceof Player) || !(event.getDamager() instanceof Player)) return;
         User user = UserManager.getUser((Player) event.getDamager());
+        if (user == null) return;
 
         if (user.isVanished()) {
             event.setCancelled(true);
